@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+
+<body>
+    <script>
+        // Regular function
+            // function declaration
+        function sayHello1(greet) {
+            console.log(`${greet}!`);
+        }
+
+        //function expression
+        const sayName1 = function (name) {
+            console.log(`Nama saya ${name}`)
+        }
+
+        //Pada arrow function kita tidak perlu menuliskan keyword function setiap membuat fungsi. 
+        //Kita tetap menuliskan parameter di dalam tanda kurung lalu diikuti dengan tanda panah(=>) seblum kurung kurawal
+
+        // Arrow function
+        const sayHello2 = (greet2) => {
+            console.log(`${greet2}!`)
+        }
+
+        const sayName2 = (name2) => {
+            console.log(`Nama saya ${name2}`)
+        }
+
+        sayName1("Nico")
+        sayName2("Situmorang")
+
+        //apabila fungsi hanya memiliki satu parameter, maka kita bisa menghapuskan tanda kurung
+        const sayHello3 = greet3 => {
+            console.log(`Selamat pagi ${greet3}!`)
+        }
+
+        sayHello3("Nico");
+    
+        //jika kita sama sekali tidak membutuhkan parameter, maka kita tetap menuliskan tanda kurung namun kosong
+        const sayHello4 = () => {
+            console.log(`Selamat pagi semuanya!`)
+        }
+
+        sayHello4();
+        //ketika body dari function hanya terdiri dari satu baris, kita bisa menghapus tanda kurung kurawal yang tentunya akan menghemat baris kode yang ditulis
+        const sayHello5 = nico => console.log(`Selamat pagi semuanya!`)
+        
+        sayHello4();
+        
+        // ketika sebuah fungsi perlu mengembalikan nilai, kita tidak perlu lagi menuliskan return (hanya bekerja untuk fungsi satu baris)
+        const multiply = (a, b) => a * b;
+        console.log(multiply(3,4));
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Parameter</title>
+</head>
+<body>
+    <script>
+        // Dengan rest parameter, kita dapat menggabungkan beberapa elemen menjadi satu array.
+        // Sangat bermanfaat ketika kita hendak membuat sebuah fungsi dengan parameter yang tidak pasti.
+        function sum(...numbers) {
+            let result = 0;
+            for (let number of numbers) {
+                result += number;
+            }
+            return result;
+        }
+        console.log(sum(1,2,3,4,5));
+    </script>
+</body>
+</html>

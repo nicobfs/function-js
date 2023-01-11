@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body>
+    <script>
+        function newton1() {
+            var ke1 = 'Kesetimbangan'   // Variabel lokal di dalam scope fungsi init
+
+            function satu() {      // Inner function, merupakan contoh closure
+            console.log(`Hukum Newton 1, ${ke1}`);   // Memanggil variabel yang dideklarasikan di parent function
+
+            }
+            satu();
+        }
+        newton1();
+
+    function newton2() {
+        var ke2 = 'Percepatan';
+
+        function dua() {
+            console.log(`Hukum Newton 2, ${ke2}`);
+        }
+        return dua;
+    }
+
+    let myFunction = newton2();
+    myFunction();
+
+// Private Method
+
+    let counter = 0;
+
+    let add = () => {
+        return ++counter;
+    }
+
+    console.log(add());
+    console.log(add());
+    counter = 23;
+    console.log(add());
+
+//Program Counter menggunakan closure 
+let adds = () => {
+    let counter = 0;
+    return () => {
+        return ++counter;
+    };
+}
+
+let addCounter = adds();
+
+console.log(addCounter());
+console.log(addCounter());
+console.log(addCounter());
+
+    </script>
+</body>
+</html>
